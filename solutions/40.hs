@@ -2,12 +2,6 @@ import Data.Digits
 import Data.List
 import Euler
 
---listIt :: Integer -> [Integer]
---listIt n = digits 10 n
-
---unList :: [Integer] -> Integer
---unList n = unDigits 10 n
-
 champ :: [Integer] -> [[Integer]]
 champ [] = []
 champ (n:ns) = (listIt n):(champ ns) 
