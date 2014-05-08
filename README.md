@@ -3,7 +3,7 @@ Project Euler solutions in Haskell
 
 This solutions to [Project Euler][1] are an attempt to teach myself some [Haskell][2].
 
-Therefore don't expect elegant code or good runtimes.
+Therefore don't expect elegant code <del>or good runtimes</del>.
 
 ### Note
 Since `Euler.hs` (exporting often used functions) is located at the same level as the `solutions` folder you'll have to run
