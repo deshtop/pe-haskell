@@ -1,11 +1,5 @@
 import Data.Digits
-
-listIt :: Integer -> [Integer]
-listIt n = digits 10 n
-
-fac :: Integer -> Integer
-fac n = product [1..n]
-
+import Euler
 
 fSum :: Integer -> Integer
 fSum n = sum $ map (fac) ln
