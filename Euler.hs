@@ -1,29 +1,34 @@
-module Euler 	(listIt
-		,unList
-		,fibs
-		,fac
-		,isPanDigi)
+module Euler 	
+( listIt
+, unList
+, fibs
+, fac
+, isPanDigi )
 where
 
 import Data.Digits
 import Data.Numbers.Primes
 import Data.List
 
-listIt :: Integer -> [Integer]
+listIt :: (Integral a) => a -> [a]
 listIt n = digits 10 n
 
-unList :: [Integer] -> Integer
+unList :: (Integral a) => [a] -> a 
 unList n = unDigits 10 n
 
 fibs :: [Integer]
 fibs = 1:1:zipWith (+) fibs (tail fibs)
 
-fac :: Integer -> Integer
+fac :: (Integral a) => a -> a 
 fac n = product [1..n]
 
-isPanDigi :: Integer -> Bool
-isPanDigi n
-	| ((sort $ take 9 ln) == [1..9]) && ((sort $ drop (len-9) ln) == [1..9])	= True
-	| otherwise									= False
-	where 	ln = listIt n
-		len = genericLength ln
+isPanDigi :: (Integral a) => a -> Bool
+isPanDigi n = panDigiCheck (map fromIntegral $ sort ln) [1..len]
+    where   ln = listIt n
+            len = length ln
+
+panDigiCheck :: [Int] -> [Int] -> Bool
+panDigiCheck _ [] = True
+panDigiCheck (n:ns) (l:ls)
+	| n == l	    = panDigiCheck ns ls
+	| otherwise 	= False
