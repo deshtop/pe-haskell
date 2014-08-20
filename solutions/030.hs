@@ -11,3 +11,5 @@ iterateNrs n
     | otherwise         = iterateNrs (n+1) 
     where   ln = listIt n
             pwrSum = powerSum ln
+
+main = print $ sum $ iterateNrs 2 
